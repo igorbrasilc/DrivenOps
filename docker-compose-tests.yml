@@ -1,19 +1,19 @@
 services:
-  postgres_students_db_test:
+  postgres_students_db:
     image: postgres
-    container_name: postgres_students_db_test
+    container_name: postgres_students_db
     restart: always
     ports:
       - 2345:5432
     env_file:
-      - .env.test
+      - back-end/.env.test
 
   node_students_app:
     container_name: node_students_app
-    build: ./back-end/
+    build: ./back-end
     ports:
       - 5000:5000
     env_file:
-      - .env.test
+      - back-end/.env.test
     depends_on:
-      - postgres_students_db_test
+      - postgres_students_db
