@@ -18,3 +18,4 @@ jobs:
         run: docker-compose -f docker-compose-test.yml run node_students_app npm run test
       - name: Build
         run: cd back-end/ && npm i && npm run build
+        # test
